@@ -1,10 +1,7 @@
-# CPE 202
 # Lab 0 Tests
-
 
 import unittest
 from location import *
-
 
 class TestLab1(unittest.TestCase):
 
