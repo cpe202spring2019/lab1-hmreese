@@ -12,8 +12,7 @@ class TestLab1(unittest.TestCase):
 
         test_list = [1, 2, 3]
         self.assertEqual(max_list_iter(test_list), 3) # check for correct return
-        empty_list = []
-        self.assertEqual(max_list_iter(empty_list), None) # check for empty list
+        self.assertEqual(max_list_iter([]), None) # check for empty list
 
 
     def test_reverse_rec(self):
@@ -32,7 +31,7 @@ class TestLab1(unittest.TestCase):
         with self.assertRaises(ValueError):  # used to check for exception
             bin_search(2, 3, 1, tlist)
 
-        self.assertEqual(bin_search(2, 1, 4, []), None)
+        self.assertEqual(bin_search(2, 1, 4, []), None) # check for empty list
 
         list_val =[0, 1, 2, 3, 4, 7, 8, 9, 10]
         low = 0
