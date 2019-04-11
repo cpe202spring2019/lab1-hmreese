@@ -28,23 +28,20 @@ def reverse_rec(int_list):
 
 
 def bin_search(target, low, high, int_list):
+    if int_list == None:                                                        
+        raise ValueError
     if len(int_list) == 0:
         return None
-    if int_list == None:
-        raise ValueError
-    if low > high:
-        return None
+    else:
+        if high > low:
+            mid = (high + low) // 2
+            if int_list[mid] == target:
+                return mid
+            elif int_list[mid] > target:
+                return bin_search(target, low, mid, int_list)
+            elif int_list[mid] < target:
+                return bin_search(target, mid + 1, high, int_list)
+        else:
+            return None
 
-    mid = (high + low) // 2
-    if int_list[mid] == target:
-        return mid
-    if int_list[mid] > target:
-        high = mid
-    if int_list[mid] < target:
-        low = mid
 
-    temp = bin_search(target, low, high, int_list)
-
-    return temp
-
-# not completed, part 3 still does not work
