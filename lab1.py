@@ -10,8 +10,8 @@ def max_list_iter(int_list):
         for i in int_list:
             if i > biggest:
                 biggest = i
+        
         return biggest
-
 
 
 def reverse_rec(int_list):
